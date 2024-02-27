@@ -7,14 +7,22 @@
 
 /**
  * Allocate and initialize the matrices on the heap. Populate
- * the input matrices with random integers from 0 to 99
+ * the input matrices with random numbers from 0 to 99
  */
 void mmm_init() {
 	// TODO
+	// A = (double **) malloc(size * sizeof(double*));
+	// allocate the rest of the matrices
+
+	// TODO
+	srand((unsigned)time(NULL));	// seed the random number generator
+ 	// initialize A and B with random values between 0 and 99
+	// initialize SEQ_MATRIX and PAR_MATRIX with 0s
+
 }
 
 /**
- * Reset a given matrix to zeroes
+ * Reset a given matrix to zeroes (their size is in the global var)
  * @param matrix pointer to a 2D array
  */
 void mmm_reset(double **matrix) {
@@ -23,13 +31,14 @@ void mmm_reset(double **matrix) {
 
 /**
  * Free up memory allocated to all matrices
+ * (their size is in the global var)
  */
 void mmm_freeup() {
 	// TODO
 }
 
 /**
- * Sequential MMM
+ * Sequential MMM (size is in the global var)
  */
 void mmm_seq() {
 	// TODO - code to perform sequential MMM
@@ -51,5 +60,6 @@ void *mmm_par(void *args) {
  */
 double mmm_verify() {
 	// TODO
+	// You may find the math.h function fabs() to be useful here (absolute value)
 	return -1;
 }
